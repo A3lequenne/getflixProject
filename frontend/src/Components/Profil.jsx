@@ -32,7 +32,7 @@ function Profile() {
                 <div class="flex-1 glass rounded-3xl shadow-xl p-8">
                     <h4 class="w-full flex justify-center text-center py-4 text-[#b4d429] text-3xl font-bold">Personal Info</h4>
                     <ul class="mt-2 text-white text-center">
-                        <li class="flex  py-2">
+                        <li class="flex  py-3">
                             <span class="font-bold w-100">Full name:</span>
                             <span class="text-white">blablabla</span>
                         </li>
