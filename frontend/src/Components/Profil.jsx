@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import Navleft from "./Navleft";
 import NavTop from "./Navtop";
+import { FaRegEdit } from "react-icons/fa";
 
 function Profile() {
   const [isOpen, setClose] = useState(false);
@@ -30,40 +31,44 @@ function Profile() {
           isOpen ? "bg-white/0.5" : ""
         }`}
       >
-        <div class="w-[50%] h-[50%] px-6 lglass py-4 rounded-3xl items-center justify-center">
-        
-            <h3 class="w-full flex justify-center text-[#b4d429] text-3xl font-bold">
-              User Profile
-            </h3>
-          
-          <div class="px-4 py-5 sm:p-0 items-center justify-center text-center mt-4">
-            <dl class="w-full h-full">
-              <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 ">
-                <dt class="text-sm font-medium text-white-500">Full name</dt>
+        <div class="px-6 py-6 lglass rounded-3xl items-center justify-center">
+          <h3 class="w-full flex justify-center text-[#b4d429] text-3xl font-bold">
+            User Profile
+          </h3>
+          <div class="items-center justify-center text-center mt-2">
+            <dl class="sm:w-fit lg:w-fit">
+              <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">Full name</dt>
                 <dd class="mt-1 text-sm text-white-900 sm:mt-0 sm:col-span-2">
                   Blablabla
                 </dd>
               </div>
               <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-white-500">Email address</dt>
+                <dt class="text-sm font-medium text-gray-500">
+                  Email address
+                </dt>
                 <dd class="mt-1 text-sm text-white-900 sm:mt-0 sm:col-span-2">
-                  blablabla
+                  Blablabla
                 </dd>
               </div>
               <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-white-500">Phone number</dt>
+                <dt class="text-sm font-medium text-gray-500">Phone number</dt>
                 <dd class="mt-1 text-sm text-white-900 sm:mt-0 sm:col-span-2">
-                blablabla
+                  Blablabla
                 </dd>
               </div>
               <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-white-500">Address</dt>
+                <dt class="text-sm font-medium text-gray-500">Address</dt>
                 <dd class="mt-1 text-sm text-white-900 sm:mt-0 sm:col-span-2">
-                blablabla
+                  Blablabla
                 </dd>
               </div>
-            </dl></div>
+            </dl>
           </div>
+        </div>
+        <button className="absolute top-0 right-0 bg-[#b4d429] text-white px-4 py-2 rounded-3xl mt-4">
+          Edit Profile
+        </button>
       </section>
     </div>
   );
