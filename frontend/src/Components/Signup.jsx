@@ -5,8 +5,72 @@ import screen from "./img/screen.jpeg";
 
 function Login() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
   const [showPassword, setShowPassword] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const validateEmail = (email) => {
+    // Vous pouvez implémenter une logique plus complexe pour valider l'e-mail
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const validateForm = () => {
+    // Validez tous les champs ici en mettant à jour formErrors
+    let valid = true;
+    const newErrors = {};
+
+    if (formData.fullName.trim() === "") {
+      newErrors.fullName = "Full Name is required";
+      valid = false;
+    }
+
+    if (!validateEmail(formData.email)) {
+      newErrors.email = "Invalid email address";
+      valid = false;
+    }
+
+    if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
+      valid = false;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
+      valid = false;
+    }
+
+    setFormErrors(newErrors);
+
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Envoyez les données du formulaire, car tout est valide
+      console.log("Form submitted:", formData);
+    } else {
+      console.log("Form contains errors. Please fix them.");
+    }
+  };
+
+  const handleChange = (field, value) => {
+    setFormData((prevFormData) => ({ ...prevFormData, [field]: value }));
+    // Effacez les erreurs lorsque l'utilisateur commence à saisir
+    setFormErrors((prevFormErrors) => ({ ...prevFormErrors, [field]: "" }));
+  };
 
   const togglePasswordVisibility = (field) => {
     if (field === "password") {
