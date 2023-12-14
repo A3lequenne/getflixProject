@@ -32,7 +32,6 @@ function Profile() {
 
   const handleSaveClick = () => {
     setEditing(false);
-    // Ajoutez ici la logique pour sauvegarder les modifications, si nécessaire
   };
 
   return (
@@ -52,11 +51,7 @@ function Profile() {
       </div>
       <Navleft isOpen={isOpen} toggleNavLeft={toggleNavLeft} />
       <NavTop />
-      <section
-        className={`lg:absolute lg:left-[20vw] lg:bottom-0 lg:w-[80vw] lg:bg-white/10 h-[85vh] text-white text-3xl flex items-center justify-center ${
-          isOpen ? "bg-white/0.5" : ""
-        }`}
-      ></section>
+     
       <section
         className={`lg:absolute lg:left-[20vw] lg:bottom-0 lg:w-[80vw] lg:bg-white/10 h-[85vh] text-white text-3xl flex items-center justify-center ${
           isOpen ? "bg-white/0.5" : ""
@@ -64,7 +59,7 @@ function Profile() {
       >
         <div className="px-6 py-6 lglass rounded-3xl items-center justify-center">
           <h3 className="w-full flex justify-center text-[#b4d429] text-3xl font-bold">
-            User Profile
+            Your Profile
           </h3>
           <div className="items-center justify-center text-center mt-2">
             {isEditing ? (
@@ -113,7 +108,6 @@ function Profile() {
                   />
                 </dd>
               </div>
-              {/* Ajoutez d'autres champs éditables similaires ici */}
             </form>
             
             
