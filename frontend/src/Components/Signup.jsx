@@ -24,7 +24,7 @@ function Login() {
   };
 
   const handleChange = (e) => {
-    // Met à jour le state avec les nouvelles données du formulaire
+   
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
@@ -43,7 +43,7 @@ function Login() {
       return;
     }
 
-    // Vous pouvez procéder à l'envoi du formulaire ici
+
     console.log("Formulaire envoyé avec succès!", formData);
   };
 
@@ -89,10 +89,11 @@ function Login() {
             >
               Full Name
             </label>
+            
             <input
               type="text"
               id="fullName"
-              className={`lglass text-white text-xs rounded-lg block w-full p-1.5 md:p-2.5 ${fullNameErrorClass}`}
+              className={`lglass peer-invalid:visible text-white text-xs rounded-lg block w-full p-1.5 md:p-2.5 ${fullNameErrorClass}`}
               placeholder="Sarah Willis"
               required
             />
@@ -178,7 +179,7 @@ function Login() {
             </div>
           </div>
       <button
-        type=""
+        type="submit"
         className="fancy w-1/2 mt-2 md:w-60 md:mb-4 w-40 mx-auto flex items-center justify-center text-xl md:text-xl bg-[#60701a] py-2 rounded-md text-[#b4d429] border border-[#b4d429] hover:scale-105 group-hover:animate-shine"
       >
         Become a member
@@ -187,6 +188,7 @@ function Login() {
         </div>
       </div>
     </div>
+    
   );
 }
 
