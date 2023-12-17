@@ -7,6 +7,7 @@ import PictureSelection from "./PictureSelection";
 import catImage from "../img/cat.jpg";
 import horrorImage from "../img/horror.jpg";
 import sfImage from "../img/sf.jpg";
+import CookieBanner from "./cookiebanner";
 
 function Profile() {
   const [isOpen, setClose] = useState(false);
@@ -74,7 +75,7 @@ function Profile() {
           isOpen ? "bg-white/0.5" : ""
         }`}
       >
-        <div className="w-[95%] lg:w-auto lg:absolute top-5 left-10 px-6 py-6 lglass rounded-3xl items-center justify-center">
+        <div className="w-[95%] lg:w-auto top-5 left-10 px-6 py-6 lglass rounded-3xl items-center justify-center">
           <div className="flex flex-row items-center">
             <img
               src={picturesArray.find((p) => p.id === selectedPicture).image}
@@ -85,6 +86,7 @@ function Profile() {
             <h3 className="w-full text-[#b4d429] text-3xl font-bold mx-2 lg:mx-6">
               Your Profile
             </h3>
+      
           </div>
           <div className="flex items-center justify-center text-left mt-2 lg:mx-2">
             {isEditing ? (
@@ -184,6 +186,7 @@ function Profile() {
               Edit Profile
             </button>
           )}
+          <CookieBanner/>
         </div>
 
         {isEditing ? (
