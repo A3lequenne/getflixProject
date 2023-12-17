@@ -166,20 +166,6 @@ function Profile() {
                     {profileInfo.emailAddress}
                   </dd>
                 </div>
-                <div className="py-3 lg:py-5 lg:grid lg:grid-cols-3 lg:gap-4 lg:px-6">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Phone number
-                  </dt>
-                  <dd className="mt-1 text-sm text-white-900 sm:mt-0 sm:col-span-2">
-                    {profileInfo.phoneNumber}
-                  </dd>
-                </div>
-                <div className="py-3 lg:py-5 lg:grid lg:grid-cols-3 lg:gap-4 lg:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Address</dt>
-                  <dd className="mt-1 text-sm text-white-900 sm:mt-0 sm:col-span-2">
-                    {profileInfo.address}
-                  </dd>
-                </div>
               </dl>
             )}
           </div>
