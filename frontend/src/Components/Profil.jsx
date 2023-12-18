@@ -8,6 +8,7 @@ import catImage from "../img/cat.jpg";
 import horrorImage from "../img/horror.jpg";
 import sfImage from "../img/sf.jpg";
 import CookieBanner from "./cookiebanner";
+import PrivacyPolicy from "./privacy";
 
 function Profile() {
   const [isOpen, setClose] = useState(false);

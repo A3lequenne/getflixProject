@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import PrivacyPolicy from "./privacy";
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(!Cookies.get("cookiesAccepted"));
@@ -34,7 +35,7 @@ const CookieBanner = () => {
           <div className="flex items-center justify-between">
             <a
               className="text-xs text-gray-400 mr-1 hover:text-gray-800"
-              href="#"
+              href="./privacy"
             >
               Privacy Policy
             </a>

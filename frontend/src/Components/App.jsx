@@ -10,6 +10,7 @@ import Profil from "./Profil";
 import Ticket from "./Ticket";
 import Category from "./Movie";
 import Payments from "./Payment";
+import PrivacyPolicy from "./privacy";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/movie" element={<Movie />} />
         <Route path="/payments/*" element={<Payments />} />
         <Route path="/movie/:movieId" element={<Movie />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );
