@@ -1,24 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(!Cookies.get("cookiesAccepted"));
 
   const acceptCookies = () => {
-    Cookies.set("cookiesAccepted", true);
+    Cookies.set("cookiesAccepted", true, { expires: 1 / 1440 }); // Cookie valide pendant 1 minute
     setShowBanner(false);
   };
 
+  useEffect(() => {
+    // Vérifie si l'utilisateur a déjà accepté les cookies dans le cache
+    const hasAcceptedCookies = Cookies.get("cookiesAccepted");
+
+    // Affiche la bannière des cookies uniquement si l'utilisateur n'a pas encore accepté
+    setShowBanner(!hasAcceptedCookies);
+  }, []);
+
   return (
     showBanner && (
-      <div className="cookie-banner rounded-3xl lglass">
-        <p>
-          Ce site utilise des cookies pour améliorer votre expérience. En
-          continuant à naviguer sur le site, vous acceptez notre utilisation des
-          cookies.
-        </p><div className="border border-box border-white justify-center items-center flex-box">
-        <button onClick={acceptCookies}>Accepter</button>
-      </div>
+      <div className="info-popup fixed flex items-center justify-center inset-x-0 bottom-0 mb-4">
+        <div className="glass rounded-3xl p-6" style={{ cursor: "auto" }}>
+          <div className="w-16 mx-auto -mt-10 mb-3">
+            <img
+              className="-mt-1"
+              src="https://www.svgrepo.com/show/30963/cookie.svg"
+              alt="Cookie Icon SVG"
+            />
+          </div>
+          <span className="w-full block text-white mb-3">
+            We use cookies to provide a better user experience.
+          </span>
+          <div className="flex items-center justify-between">
+            <a
+              className="text-xs text-gray-400 mr-1 hover:text-gray-800"
+              href="#"
+            >
+              Privacy Policy
+            </a>
+
+            <button
+              type="button"
+              className="fancy mt-2 w-40 mx-auto flex items-center justify-center text-center text-xl md:text-xl bg-[#60701a] py-2 rounded-md text-[#b4d429] border border-[#b4d429] hover:scale-105 group-hover:animate-shine focus:ring"
+              onClick={acceptCookies}
+            >
+              Accept
+            </button>
+          </div>
+        </div>
       </div>
     )
   );

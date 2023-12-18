@@ -69,12 +69,14 @@ function Profile() {
       </div>
       <Navleft isOpen={isOpen} toggleNavLeft={toggleNavLeft} />
       <NavTop />
+      
 
       <section
         className={`items start md:items-start flex flex-col md:flex-row lg:flex-row lg:absolute lg:left-[20vw] lg:bottom-0 lg:w-[80vw] lg:bg-white/10 h-[85vh] text-white text-3xl flex items-center justify-center ${
           isOpen ? "bg-white/0.5" : ""
         }`}
       >
+        <CookieBanner/>
         <div className="w-[95%] lg:w-auto top-5 left-10 px-6 py-6 lglass rounded-3xl items-center justify-center">
           <div className="flex flex-row items-center">
             <img
@@ -186,7 +188,7 @@ function Profile() {
               Edit Profile
             </button>
           )}
-          <CookieBanner/>
+          
         </div>
 
         {isEditing ? (
