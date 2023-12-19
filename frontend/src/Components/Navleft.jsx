@@ -20,7 +20,6 @@ function Navleft({ isOpen, toggleNavLeft, username, onLogout }) {
         window.localStorage.removeItem("userData");
       }
 
- 
       console.log("Logging out...");
 
       window.location.reload();
@@ -57,13 +56,11 @@ function Navleft({ isOpen, toggleNavLeft, username, onLogout }) {
     fetchUserDataFromAPI();
   }, [username]);
 
-  
   const iconImageMap = {
-    "1": catImage,
-    "2": horrorImage,
-    "3": sfImage,
+    1: catImage,
+    2: horrorImage,
+    3: sfImage,
   };
-
 
   console.log("Username in Navleft:", username);
   return (
@@ -74,7 +71,7 @@ function Navleft({ isOpen, toggleNavLeft, username, onLogout }) {
     >
       <aside className="h-screen flex flex-col lg:items-start items-center lg:ml-10 justify-start">
         <div className="lg:h-[10vh] z-100 text-xl text-greeny flex flex-row self-start lg:items-center">
-        <img
+          <img
             className=" w-[160px] lg:absolute lg:left-5 lg:mt-2"
             src={cinemania}
             alt=""
@@ -86,18 +83,21 @@ function Navleft({ isOpen, toggleNavLeft, username, onLogout }) {
         />
         {/* //TU MODIFIE LA */}
         <div className="mt-[5vh] glass rounded-3xl w-48 h-[18%] mb-10 flex flex-col">
-      <div className="flex flex-row items-center ml-2 mt-8">
-        <img
-         src={iconImageMap[userData.icon] || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} // Provide a default image URL or handle it as needed
-          alt=""
-          className="rounded-full h-[50px] w-[50px]"
-        />
-        <h3 className="ml-3 text-xl text-white">{username || "Guest"}</h3>
-      </div>
-      <h3 className="text-white/80 text-center mt-1 text-sm">
-        {userData.email}
-      </h3>
-    </div>
+          <div className="flex flex-row items-center ml-2 mt-8">
+            <img
+              src={
+                iconImageMap[userData.icon] ||
+                "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+              } // Provide a default image URL or handle it as needed
+              alt=""
+              className="rounded-full h-[50px] w-[50px]"
+            />
+            <h3 className="ml-3 text-xl text-white">{username || "Guest"}</h3>
+          </div>
+          <h3 className="text-white/80 text-center mt-1 text-sm">
+            {userData.email}
+          </h3>
+        </div>
         <nav className="h-[50%] flex flex-col">
           <ul className="list-none h-[35%] p-0 text-white flex flex-col items-center justify-between text-lg mt-10">
             <NavLink
@@ -141,7 +141,7 @@ function Navleft({ isOpen, toggleNavLeft, username, onLogout }) {
         </nav>
       </aside>
       <div className="text-white absolute bottom-5 left-0 lg:ml-10 text-lg">
-      <div
+        <div
           className="ml-7 flex flex-row items-center cursor-pointer"
           onClick={handleLogout}
         >
